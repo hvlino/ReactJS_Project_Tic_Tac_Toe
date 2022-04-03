@@ -1,0 +1,137 @@
+.game {
+
+    max-width: 340px;
+    width: 100%;
+    margin: auto;
+    .up-side {
+
+        position: relative;
+        height: 100px;
+        .buttons {
+            gap: 10px;
+            margin-bottom: 10px;
+            display: inline-flex;
+            position: absolute;
+            right: 0px;
+        }
+        .which-turn {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            background-color: #213742;
+            text-transform: uppercase;
+            color: #a7bdc8;
+            font-size: 1.3em;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 1px 0px #0f202a;
+            ;
+        }
+    }
+    .down-side {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 15px;
+        .you-count {
+            position: absolute;
+            width: auto;
+            background-color: #31c4be;
+            text-transform: uppercase;
+            color: #11252e;
+            font-size: 1.3em;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 1px 0px #0f202a;
+            border: 1px solid pink;
+            left: 0;
+        }
+        .tie-count {
+            position: absolute;
+            width: auto;
+            background-color: #a8bec9;
+            text-transform: uppercase;
+            color: #11252e;
+            font-size: 1.3em;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 1px 0px #0f202a;
+            border: 1px solid pink;
+        }
+        .cpu-count {
+            position: absolute;
+            width: auto;
+            background-color: #f2b237;
+            text-transform: uppercase;
+            color: #11252e;
+            font-size: 1.3em;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 1px 0px #0f202a;
+            border: 1px solid pink;
+            top: 60%;
+            right: 0;
+            transform: translate(0, 0);
+        }
+    }
+   
+   
+
+    .gamegrid {
+        
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+
+        .cell {
+            
+            height: 90px;
+            background: transparent;
+            color: white;
+            border-radius: 8px;
+            background-color: lighten(#2a424e, 2%);
+            border: none;
+            font-size: 0;
+            transition: all 200ms ease-in-out;
+            cursor: pointer;
+            box-shadow: 0px 5px 1px 0px #0f202a;
+
+            &.filled {
+/*              animation: wiggle 1s alternate-reverse;
+ */             font-size: 3em;
+                box-shadow: inset 1px 0px 0px -2px rgba(0,0,0,0.5);
+                transform: translateY(4px);
+                background-color: darken(#2a424e, 3%);
+                border: 1px solid darken(#2a424e, 4%);;
+
+                &:hover {
+                    background:none;
+                }
+            } 
+            /* &:hover {
+                background: url(../../../public/x-solid.svg) no-repeat center #31c4be;
+                background-size: contain;
+                color: #31c4be;
+            } */
+        }
+
+        .x {
+            color: #31c4be;
+            filter: brightness(141%) saturate(1000%) contrast(1000%) drop-shadow(10px 10px 64px #31c4be);            
+            transform: scale(1.3);
+            stroke: #31c4be; /* Background color against your svg */
+            stroke-width: 40px; /*Between 1px and 2px*/
+        }
+        .o {
+            filter: brightness(100%) saturate(500%) contrast(500%) drop-shadow(0px 0px 64px #31c4be);            
+            color: #fca607; 
+            transform: scale(1.3);
+            stroke: #fca607; /* Background color against your svg */
+            stroke-width: 40px; /*Between 1px and 2px*/
+             }
+    }
+
+        
+}

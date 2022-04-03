@@ -1,0 +1,32 @@
+  .endgame{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    text-transform: uppercase;
+    font-size: 3em;
+    
+    .endgame-background {
+      background-color: #1f3540 transparent;
+      width: 100%;
+      margin: auto;
+      padding: 30px;
+
+    .game-over {
+
+        color: #2fc4be;
+        margin: auto;
+        font-weight: 500;
+    }
+    .buttons {
+      width: 250px;
+      margin: auto;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
