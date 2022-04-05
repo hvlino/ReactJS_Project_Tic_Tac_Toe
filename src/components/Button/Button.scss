@@ -1,0 +1,56 @@
+$orange: rgb(238, 155, 0);
+$blue: #33c2c0;
+$gray: #a8bec9;
+
+.button {
+    margin-top: 40px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+    width: 100%;
+    max-width: 350px;   
+    text-transform: uppercase;
+    padding: 0;
+
+
+    .button-front {
+        display: block;
+        padding: 12px 15px;
+        border-radius: 12px;
+        transform: translateY(-6px);
+        font-weight: bold;
+        font-size: 1.15em;
+
+      }
+    
+    &:active .button-front {
+        transform: translateY(-2px);
+    }
+
+
+    &.orange {
+        background: $orange;
+    }
+    &.orange .button-front {
+        background: lighten($orange, 9%);
+    }
+
+    &.blue {
+        background: $blue;
+    }
+    &.blue .button-front {
+        background: lighten($blue, 10%);
+    }    
+
+    &.gray {
+        background: $gray;
+    }
+    &.gray .button-front {
+        background: lighten($gray, 10%);
+    }
+
+    &.small {
+        width: auto;
+    }
+  }

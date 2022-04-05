@@ -1,0 +1,75 @@
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   80% { transform: rotate(0deg); }
+   85% { transform: rotate(5deg); }
+   95% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}   
+
+.togglechoice {
+       
+        height: 140px;
+        background-color: #1f3540;
+        border-radius: 7px;
+        color: white;
+        box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+        padding: 20px;
+        text-transform: uppercase;
+        
+    
+    .pick{
+        padding-top: 5px;
+        margin-bottom: 25px;
+        color: #a2b8c3;
+    }
+    .remember {
+        padding-top: 30px;
+        color: #536974;
+    }
+
+    .placeholder-choice {
+        position: relative;
+        background-color: #192a32;
+        height: 40px;
+        border-radius: 6px;
+         .square {
+            width: 50%;
+            height: 40px; 
+            background: #c5d7df;
+            border-radius: 4px;
+            position: absolute; 
+            transition: all 250ms cubic-bezier(.47,1.64,.41,.8); 
+            
+        }
+        .choice-x {
+            margin-left: 0;
+        }
+        .choice-o {
+            margin-left: 50%;
+        }
+        .chooseone{
+            position: absolute;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            font-weight: bold;
+     
+            button {
+                border: none;
+                color: #abbfc8;
+                background-color: transparent;
+                width: 100%;
+                height: 40px;   
+                font-size: 1em;
+                cursor: pointer;
+                font-weight: bold;
+                text-transform: uppercase;
+                transition: color 300ms ease-in-out;
+            }
+            .active {
+                color: #0e202a;
+            }
+        }        
+    }
+}
