@@ -8,4 +8,3 @@
 - [] Add "shadow" before clicking
 - [] Add crossing line animation
 - [] Add counters
-c
