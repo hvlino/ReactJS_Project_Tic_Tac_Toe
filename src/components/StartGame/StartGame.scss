@@ -2,15 +2,12 @@
     margin: auto;
     max-width: 360px;
     width: 100%;
+    animation: startGameAnim 0.7s ease 0s 1 normal forwards;
     h1 {
-        font-size: 3em;
+        font-size: 3.8em;
         color: orange;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
-    
-
-
-
     .vs-player-button {
         margin-top: 40px;
         background: #0e8b87;
@@ -36,4 +33,48 @@
     .vs-player-button:active .front-vs-player-button {
         transform: translateY(-2px);
       }
+    
+    footer {
+      position:absolute;  
+      width: 100%;
+      padding-top: 50px;
+      margin: auto;
+      color: white;
+      font-size: 0.9em;
+    }
+}
+
+@keyframes startGameAnim {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: translateY(-160px);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  55% {
+    animation-timing-function: ease-in;
+    transform: translateY(-40px);
+  }
+
+  72% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
+
+  81% {
+    animation-timing-function: ease-in;
+    transform: translateY(-10px);
+  }
+
+
+  100% {
+    animation-timing-function: ease-out;
+    transform: translateY(0);
+  }
 }

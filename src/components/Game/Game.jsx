@@ -38,10 +38,10 @@ export default function Game() {
         <div className='up-side'>
             <div className='buttons'>
                 <div className="homescreen-button">
-                    <Button theme="orange" size="small" onClick={() => restartGame()}><FontAwesomeIcon icon={faArrowLeftRotate}></FontAwesomeIcon></Button>
+                    <Button theme="gray" size="small" onClick={() => restartGame()}><FontAwesomeIcon icon={faArrowLeftRotate}></FontAwesomeIcon></Button>
                 </div>
                 <div className="exit-button">
-                    <Button theme="blue" size="small" onClick={() => resetGame()}><FontAwesomeIcon icon={faX}></FontAwesomeIcon></Button>
+                    <Button theme="gray" size="small" onClick={() => resetGame()}><FontAwesomeIcon icon={faX}></FontAwesomeIcon></Button>
                 </div>
                 
             </div>

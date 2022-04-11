@@ -1,10 +1,9 @@
 - [X] Add svg icons
 - [X] Improve endgame screen
 - [X] Better animations for everything
-- [] Add music and sounds
+- [X] Add music and sounds
 - [X] Add Hard Mode
-- [] Add shake animation in homescreen
 - [X] Change svg icon for more customizable one  
-- [] Add "shadow" before clicking
-- [] Add crossing line animation
-- [] Add counters
+- [ ] Add "shadow" before clicking
+- [X] Add counters
+

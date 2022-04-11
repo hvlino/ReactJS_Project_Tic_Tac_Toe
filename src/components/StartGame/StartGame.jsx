@@ -13,5 +13,8 @@ export default function StartGame() {
             <ToggleChoice />
             <Button theme="orange" onClick={() => startGame(true)}>NEW GAME (VS CPU)</Button>
             <Button theme="blue" onClick={() => startGame(false)}>NEW GAME (VS PLAYER)</Button>
+        <footer>Made with love by Henrique Vieira Lino <br />
+                April, 2022. Campinas - SP, Brazil.
+        </footer>
         </div>
 }

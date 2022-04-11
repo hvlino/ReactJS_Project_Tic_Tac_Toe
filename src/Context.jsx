@@ -39,16 +39,24 @@ export default ({ children }) => {
     const [tieArr, setTieArr] = useState([]);
     const [cpuArr, setCpuArr] = useState([]);
 
-    
+    const menuSelect = new Audio('/menu-select.mp3');
+    const pop = new Audio('/pop.mp3');
+    const switchflick = new Audio("/switchflick.wav");
+    const beam = new Audio("/beam.wav");
+    const endgameSound = new Audio("/endgamesound.wav");
+
+
 
     const changeUserChoice = (choice) => {
         setUserChoice(choice);
         setTurn(choice);
+        switchflick.play();
     }
 
     const startGame = (cpuOn = false) => {
         setIsCPU(cpuOn);
         setStarted(true);
+        menuSelect.play();
     }
 
     const canPlayerPlay = (i) => {
@@ -67,8 +75,10 @@ export default ({ children }) => {
                 setTurn(turn === 'x' ? 'o' : 'x');
             } else {
                 setEndgame(true);
+                endgameSound.play();
             }
             setGame(temp);
+            pop.play();
         } 
         
     }
@@ -77,7 +87,7 @@ export default ({ children }) => {
 
     useEffect(() => {
         if (isCPU && turn !== userChoice && started && !endgame) {
-            setTimeout(() => cpuChoice(game), 500);
+            setTimeout(() => cpuChoice(game), 400);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [game])
@@ -91,7 +101,7 @@ export default ({ children }) => {
 
                 if ([pos1,pos2,pos3].filter((p) => p === who).length === 2) {
                     const indexOfNullCell = [pos1,pos2,pos3].findIndex((p) => p === null);
-                    if (indexOfNullCell !== undefined || indexOfNullCell !== null) position = AVAILABLEWINS[i][indexOfNullCell];
+                    if (indexOfNullCell > -1) position = AVAILABLEWINS[i][indexOfNullCell];
                 } 
                 // Stop for 
                 if (position !== null) i = AVAILABLEWINS.length;
@@ -109,6 +119,7 @@ export default ({ children }) => {
         if (position === null || position === undefined) position = getRndEmpty(temp);
         
         setChoice(position);
+        pop.play();
     }
 
     const getRndEmpty = (currentGame) => {
@@ -127,6 +138,11 @@ export default ({ children }) => {
             const pos3 = currentGame[AVAILABLEWINS[i][2]];
             if (pos1 && pos1 === pos2 && pos2 === pos3) {
                 setWinner(pos1);
+                if (pos1 === userChoice) {
+                    youArr.push([1]);
+                } else {
+                    cpuArr.push([1]);
+                }
                 return true;
             }
         }
@@ -144,6 +160,8 @@ export default ({ children }) => {
         setGame(new Array(9).fill(null));
         setEndgame(false);
         setTurn(userChoice);
+        beam.play();
+
     }
 
 
@@ -155,6 +173,7 @@ export default ({ children }) => {
         setYouArr([]);
         setTieArr([]);
         setCpuArr([]);
+
     }    
     
 

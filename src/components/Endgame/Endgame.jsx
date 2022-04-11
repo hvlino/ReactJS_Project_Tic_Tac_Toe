@@ -9,12 +9,10 @@ export default function Endgame() {
     const { winner, restartGame, resetGame } = useContext(Context);
 
     return (<>
-
-
         <div className="endgame">
             <div className='endgame-background'>
                 <div className="game-over">
-                    {winner === 'TIE' ? 'empate' : <div>{winner} wins!</div>}
+                    {winner === 'TIE' ? 'empate!' : <div>{winner} wins!</div>}
                 </div>
                 <div className='buttons'>
                     <Button theme="gray" size="small" onClick={() => resetGame()}>

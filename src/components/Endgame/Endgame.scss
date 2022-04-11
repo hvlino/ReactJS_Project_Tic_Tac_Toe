@@ -10,23 +10,36 @@
     font-size: 3em;
     
     .endgame-background {
-      background-color: #1f3540 transparent;
-      width: 100%;
+      background-color: #19323f;opacity:0.9;
       margin: auto;
-      padding: 30px;
+      width: 30%;
+      border-radius: 20px;
+      padding: 50px;
+      animation: myAnim 0.8s ease 0s 1 normal forwards;
 
     .game-over {
 
         color: #2fc4be;
         margin: auto;
         font-weight: 500;
+        font-weight: bold;
     }
     .buttons {
       width: 250px;
       margin: auto;
       display: flex;
       justify-content: space-around;
+      gap: 20px;
     }
   }
 }
 
+@keyframes myAnim {
+  0% {
+    transform: scale(0.1);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
