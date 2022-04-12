@@ -39,11 +39,11 @@ export default ({ children }) => {
     const [tieArr, setTieArr] = useState([]);
     const [cpuArr, setCpuArr] = useState([]);
 
-    const menuSelect = new Audio('/menu-select.mp3');
-    const pop = new Audio('/pop.mp3');
-    const switchflick = new Audio("/switchflick.wav");
-    const beam = new Audio("/beam.wav");
-    const endgameSound = new Audio("/endgamesound.wav");
+    const menuSelect = new Audio('./menu-select.mp3');
+    const pop = new Audio('./pop.mp3');
+    const switchflick = new Audio("./switchflick.wav");
+    const beam = new Audio("./beam.wav");
+    const endgameSound = new Audio("./endgamesound.wav");
 
 
 
