@@ -8,7 +8,6 @@ import Game from './components/Game/Game';
 
 function App() {
   const { started  } = useContext(Context);
-
   return (
     
     <div className="App">
