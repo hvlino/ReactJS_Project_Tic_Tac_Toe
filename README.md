@@ -7,9 +7,9 @@
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Built with](#built-with)
-  - [Useful resources](#useful-resources)
+  - [Screenshot](#screenshot)
+
 
 ## Overview
 
@@ -21,12 +21,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Play the game either solo vs the computer or multiplayer against another person
 - **Bonus **: Instead of having the computer randomly make their moves, try making it clever so it’s proactive in blocking your moves and trying to win
-
-### Screenshot
-
-![](https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/xbkog35xtcpfw7ygwae9.jpg)
-
-
+- 
 ### Built with
 
 - Semantic HTML5 markup
@@ -34,4 +29,10 @@ Users should be able to:
 - Flexbox and Grid
 - SCSS
 - [React](https://reactjs.org/) - JS library
+
+### Screenshot
+
+![](https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/xbkog35xtcpfw7ygwae9.jpg)
+
+
 
