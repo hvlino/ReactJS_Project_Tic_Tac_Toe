@@ -22,6 +22,6 @@ export default function ToggleChoice() {
                 <button className={userChoice === 'o' ? 'active' : ''} onClick={() => changeUserChoice('o')}>{ o }</button>
             </div>
         </div>
-        <p className='remember'>REMEMBER {turn} GOES FIRST</p>
+        <p className='remember'>REMEMBER X GOES FIRST</p>
     </div>
 }
