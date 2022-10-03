@@ -4,6 +4,12 @@
 - [X] Add music and sounds
 - [X] Add Hard Mode
 - [X] Change svg icon for more customizable one  
-- [ ] Add "shadow" before clicking
 - [X] Add counters
-
+- [ ] Make each grid area stay pressed when you hold click on them
+- [ ] Make X go first always
+- [ ] Add a difficult selector
+- [ ] Add an easy and hard mode
+- [X] Add a mute button
+- [ ] Solve mute button CSS location
+- [ ] Add X or O "shadow" before clicking
+- [ ] Better responsiveness for browser size

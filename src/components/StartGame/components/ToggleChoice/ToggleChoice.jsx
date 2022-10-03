@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function ToggleChoice() {
     
-    const { userChoice, changeUserChoice, turn } = useContext(Context);
+    const { userChoice, changeUserChoice } = useContext(Context);
     const x = <FontAwesomeIcon icon={faX} className="x"></FontAwesomeIcon>;
     const o = <FontAwesomeIcon icon={faO} className="o"></FontAwesomeIcon>;
 
@@ -22,6 +22,6 @@ export default function ToggleChoice() {
                 <button className={userChoice === 'o' ? 'active' : ''} onClick={() => changeUserChoice('o')}>{ o }</button>
             </div>
         </div>
-        <p className='remember'>REMEMBER X GOES FIRST</p>
+        <p className='remember'>REMEMBER: X GOES FIRST</p>
     </div>
 }

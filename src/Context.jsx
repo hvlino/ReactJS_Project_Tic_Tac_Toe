@@ -16,7 +16,8 @@ const AVAILABLEWINS = [
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({ children }) => {
     
-
+    const [isVolumeOn, setIsVolumeOn] = useState(true);
+    
     // if started true, vs-cpu. if started false,vs-player
     const [started, setStarted] = useState(false);
 
@@ -39,25 +40,31 @@ export default ({ children }) => {
     const [tieArr, setTieArr] = useState([]);
     const [cpuArr, setCpuArr] = useState([]);
 
+    // audios
     const menuSelect = new Audio('./menu-select.mp3');
     const pop = new Audio('./pop.mp3');
     const switchflick = new Audio("./switchflick.wav");
     const beam = new Audio("./beam.wav");
     const endgameSound = new Audio("./endgamesound.wav");
 
+    const toggleVolumeOnOff = event => {
+        setIsVolumeOn(current => !current);
+    }
 
 
     const changeUserChoice = (choice) => {
         setUserChoice(choice);
         setTurn(choice);
-        switchflick.play();
+        if (isVolumeOn) switchflick.play();
     }
+
 
     const startGame = (cpuOn = false) => {
         setIsCPU(cpuOn);
         setStarted(true);
-        menuSelect.play();
+        if (isVolumeOn) menuSelect.play();
     }
+    
 
     const canPlayerPlay = (i) => {
         if (isCPU && turn !== userChoice) {
@@ -65,6 +72,7 @@ export default ({ children }) => {
         }
         setChoice(i);
     }
+
 
     const setChoice = (i) => {
         if (game[i] === null) {
@@ -75,15 +83,15 @@ export default ({ children }) => {
                 setTurn(turn === 'x' ? 'o' : 'x');
             } else {
                 setEndgame(true);
-                endgameSound.play();
+                if (isVolumeOn) endgameSound.play();
             }
             setGame(temp);
-            pop.play();
+            if (isVolumeOn) pop.play();
+            
         } 
         
     }
 
-    
 
     useEffect(() => {
         if (isCPU && turn !== userChoice && started && !endgame) {
@@ -91,6 +99,8 @@ export default ({ children }) => {
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [game])
+
+
     const findCorrectPosition = (temp, positionParam, who) => {
         let position = positionParam;
         if (position === null) {
@@ -119,7 +129,7 @@ export default ({ children }) => {
         if (position === null || position === undefined) position = getRndEmpty(temp);
         
         setChoice(position);
-        pop.play();
+        if (isVolumeOn) pop.play();
     }
 
     const getRndEmpty = (currentGame) => {
@@ -160,8 +170,7 @@ export default ({ children }) => {
         setGame(new Array(9).fill(null));
         setEndgame(false);
         setTurn(userChoice);
-        beam.play();
-
+        if (isVolumeOn) beam.play();
     }
 
 
@@ -178,6 +187,8 @@ export default ({ children }) => {
     
 
     const values = { 
+        isVolumeOn,
+        toggleVolumeOnOff,
         started, 
         setStarted,
         userChoice,

@@ -7,23 +7,26 @@ $blue: #33c2c0;
     animation: startGameAnim 0.7s ease 0s 1 normal forwards;
     h1 {
         font-size: 3.8em;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         display: flex;
         justify-content: center;
-        gap: 40px;
+        gap: 20px;
 
         .xsymb {
             color: $blue;
-            transform: scale(1.3);
+            transform: scale(0.9);
             stroke: #31c4be; /* Background color against your svg */
             stroke-width: 40px; /*Between 1px and 2px*/
         }
         .osymb {
             color: #fca607; 
-            transform: scale(1.3);
+            transform: scale(0.9);
             stroke: #fca607; /* Background color against your svg */
             stroke-width: 40px; /*Between 1px and 2px*/
         }
+    }
+    button .volume-on {
+      
     }
     .vs-player-button {
         margin-top: 40px;
