@@ -1,11 +1,11 @@
-import './ToggleChoice.scss';
+import './ToggleChoiceXO.scss';
 import { Context } from '../../../../Context';
 import React, { useContext } from 'react';
 
 import { faX, faO } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function ToggleChoice() {
+export default function ToggleChoiceXO() {
     
     const { userChoice, changeUserChoice } = useContext(Context);
     const x = <FontAwesomeIcon icon={faX} className="x"></FontAwesomeIcon>;

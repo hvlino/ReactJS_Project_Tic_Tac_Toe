@@ -16,12 +16,9 @@ export default function Game() {
     const x = <FontAwesomeIcon icon={faX} className="x"></FontAwesomeIcon>;
     const o = <FontAwesomeIcon icon={faO} className="o"></FontAwesomeIcon>;
 
-
     const buttonCSS = (elem) => {
         const classes = ['cell'];
         if (elem) classes.push('filled') 
-        
-
         return classes.join(' ');
     }
 
@@ -30,11 +27,7 @@ export default function Game() {
         return null;
     }
 
-    
-
-    return <div className='game'>
-
-        
+    return <div className='game'>        
         <div className='up-side'>
             <div className='buttons'>
                 <div className="homescreen-button">
@@ -43,7 +36,6 @@ export default function Game() {
                 <div className="exit-button">
                     <Button theme="gray" size="small" onClick={() => resetGame()}><FontAwesomeIcon icon={faX}></FontAwesomeIcon></Button>
                 </div>
-                
             </div>
             <div className="which-turn">
                 <p>{turn === "x" ? x : o} TURN</p>

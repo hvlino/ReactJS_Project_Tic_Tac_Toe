@@ -17,9 +17,13 @@ const AVAILABLEWINS = [
 export default ({ children }) => {
     
     const [isVolumeOn, setIsVolumeOn] = useState(true);
+
+    const [difficulty, setDifficulty] = useState("easy");
     
     // if started true, vs-cpu. if started false,vs-player
     const [started, setStarted] = useState(false);
+
+    const [difficultySelectionArea, setDifficultySelectionArea] = useState(false)
 
     // define o turno do jogador (fixo)
     const [userChoice, setUserChoice] = useState('x');
@@ -59,12 +63,28 @@ export default ({ children }) => {
     }
 
 
-    const startGame = (cpuOn = false) => {
+    const selectDifficulty = (cpuOn) => {
+        // if cpuOn is true, vs-CPU \\ if cpuOn is false, vs-player
         setIsCPU(cpuOn);
-        setStarted(true);
-        if (isVolumeOn) menuSelect.play();
+        if (cpuOn === true) setDifficultySelectionArea(true);
     }
-    
+
+    const startEasyGame = () => {
+        setStarted(true);
+        if (isVolumeOn) menuSelect.play();     
+    }
+
+    const startHardGame = () => {
+        setStarted(true);
+        setDifficulty("hard");
+        if (isVolumeOn) menuSelect.play();     
+    }
+
+    // const startVsPlayerGame = () => {
+    //     setStarted(true);
+    //     setIsCPU(cpuOn);
+    //     if (isVolumeOn) menuSelect.play();     
+    // }
 
     const canPlayerPlay = (i) => {
         if (isCPU && turn !== userChoice) {
@@ -94,11 +114,36 @@ export default ({ children }) => {
 
 
     useEffect(() => {
-        if (isCPU && turn !== userChoice && started && !endgame) {
-            setTimeout(() => cpuChoice(game), 400);
+        if (isCPU && turn !== userChoice && !endgame && difficulty === "hard") {
+            setTimeout(() => cpuChoiceHardMode(game), 500);
+        } else if (isCPU && turn !== userChoice && !endgame && difficulty === "easy") {
+            setTimeout(() => cpuChoiceEasyMode(game), 500);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [game])
+
+
+    const cpuChoiceHardMode = (temp) => {
+        let position = null;
+        
+        // try to win, avoid or random
+        position = findCorrectPosition(temp, position, turn);
+        if (position === null || position === undefined) position = findCorrectPosition(temp, position, userChoice)
+        if (position === null || position === undefined) position = getRndEmpty(temp);
+        
+        setChoice(position);
+        if (isVolumeOn) pop.play();
+    }
+
+    const cpuChoiceEasyMode = (temp) => {
+        let position = null;
+        
+        // random
+        if (position === null || position === undefined) position = getRndEmpty(temp);
+        
+        setChoice(position);
+        if (isVolumeOn) pop.play();
+    }
 
 
     const findCorrectPosition = (temp, positionParam, who) => {
@@ -120,17 +165,7 @@ export default ({ children }) => {
         return position;     
     }
 
-    const cpuChoice = (temp) => {
-        let position = null;
-        
-        // try to win, avoid or random
-        position = findCorrectPosition(temp, position, turn);
-        if (position === null || position === undefined) position = findCorrectPosition(temp, position, userChoice)
-        if (position === null || position === undefined) position = getRndEmpty(temp);
-        
-        setChoice(position);
-        if (isVolumeOn) pop.play();
-    }
+
 
     const getRndEmpty = (currentGame) => {
         const randNum = Math.floor(Math.random() * currentGame.length);
@@ -171,6 +206,7 @@ export default ({ children }) => {
         setEndgame(false);
         setTurn(userChoice);
         if (isVolumeOn) beam.play();
+        setDifficultySelectionArea(false);
     }
 
 
@@ -182,7 +218,8 @@ export default ({ children }) => {
         setYouArr([]);
         setTieArr([]);
         setCpuArr([]);
-
+        setDifficultySelectionArea(false);
+        setIsCPU(false);
     }    
     
 
@@ -202,12 +239,15 @@ export default ({ children }) => {
         endgame,
         restartGame,
         resetGame,
-        startGame,
         isCPU,
         canPlayerPlay,
         youArr,
         tieArr,
-        cpuArr
+        cpuArr,
+        difficultySelectionArea,
+        selectDifficulty,
+        startHardGame,
+        startEasyGame
     };
     return <Context.Provider value={values}>
         {children}

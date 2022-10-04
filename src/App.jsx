@@ -2,7 +2,7 @@ import 'reset-css';
 import './App.scss';
 import React, { useContext } from 'react';
 import { Context } from './Context';
-import StartGame from './components/StartGame/StartGame';
+import MainMenu from './components/MainMenu/MainMenu';
 import Game from './components/Game/Game';
 
 
@@ -11,7 +11,7 @@ function App() {
   return (
     
     <div className="App">
-     { started ? <Game /> : <StartGame />} 
+     { started ? <Game /> : <MainMenu />} 
 
     </div>
   );
