@@ -1,7 +1,7 @@
 # Frontend Mentor - Tic Tac Toe solution
 
 - This is a solution to the [Tic Tac Toe challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tic-tac-toe-game-Re7ZF_E2v) by [@hvlino](https://github.com/hvlino).
-- The URL for the working game: https://d6792.gitlab.io/tic-tac-toe
+- The URL for the working game: https://hvlino.github.io/reactjs-tic-tac-toe/
 
 ## Table of contents
 
