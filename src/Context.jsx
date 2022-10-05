@@ -71,6 +71,7 @@ export default ({ children }) => {
 
     const startEasyGame = () => {
         setStarted(true);
+        setDifficulty("easy");
         if (isVolumeOn) menuSelect.play();     
     }
 

@@ -3,23 +3,29 @@ import { Context } from '../../Context';
 import React, { useContext } from 'react';
 import Endgame from '../Endgame/Endgame';
 import Button from '../Button/Button';
-
+import {ReactComponent as O} from '../../assets/o-solid.svg';
+import {ReactComponent as X} from '../../assets/x-solid.svg';
 
 import { faArrowLeftRotate } from '@fortawesome/free-solid-svg-icons';
-import { faX, faO } from '@fortawesome/free-solid-svg-icons';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Game() {
 
     const { game, endgame, canPlayerPlay, resetGame, restartGame, turn, userChoice, youArr, tieArr, cpuArr } = useContext(Context);
-
-    const x = <FontAwesomeIcon icon={faX} className="x"></FontAwesomeIcon>;
-    const o = <FontAwesomeIcon icon={faO} className="o"></FontAwesomeIcon>;
-
+    const x = <X className="x"/>
+    const o = <O className="o"/>
     const buttonCSS = (elem) => {
-        const classes = ['cell'];
-        if (elem) classes.push('filled') 
-        return classes.join(' ');
+        if (userChoice === 'x') {
+            const classes = ['cell-x'];
+            if (elem) classes.push('filled') 
+            return classes.join(' ');
+        } else if (userChoice === 'o') {
+            const classes = ['cell-o'];
+            if (elem) classes.push('filled') 
+            return classes.join(' ');
+        }
+
     }
 
     const fill = (elem) => {
@@ -38,7 +44,7 @@ export default function Game() {
                 </div>
             </div>
             <div className="which-turn">
-                <p>{turn === "x" ? x : o} TURN</p>
+                <p>{turn === "x" ? "x" : "o"} TURN</p>
             </div>
         </div>
 
@@ -58,7 +64,7 @@ export default function Game() {
 
         <div className='down-side'>
             <div className='you-count'>
-                ({userChoice === 'o' ? o : x}) You <br />
+                ({userChoice === 'o' ? "o" : "x"}) You <br />
                 {youArr.length}
             </div>
             <div className="tie-count">
@@ -66,7 +72,7 @@ export default function Game() {
                 {tieArr.length}
             </div>
             <div className="cpu-count">
-                ({userChoice === 'x' ? o : x}) CPU <br />
+                ({userChoice === 'x' ? "o" : "x"}) CPU <br />
                 {cpuArr.length}
             </div>
         </div>

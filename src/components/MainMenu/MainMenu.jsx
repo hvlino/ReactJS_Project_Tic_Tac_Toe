@@ -4,6 +4,8 @@ import { Context } from '../../Context';
 import React, { useContext } from 'react';
 import Button from '../Button/Button';
 import SelectDifficulty from '../SelectDifficulty/SelectDifficulty';
+import {ReactComponent as O} from '../../assets/o-solid.svg';
+import {ReactComponent as X} from '../../assets/x-solid.svg';
 
 
 import { faX, faO, faVolumeUp, faVolumeMute } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +17,7 @@ export default function MainMenu() {
     const { selectDifficulty, isVolumeOn, toggleVolumeOnOff, difficultySelectionArea, startEasyGame } = useContext(Context);
 
     return <div className='mainmenu'>
-        <h1><FontAwesomeIcon icon={faX} className="xsymb"/><FontAwesomeIcon icon={faO} className="osymb"/></h1>
+        <h1><X className="xsymb"/><O className="osymb"/></h1>
             <ToggleChoiceXO />
             <Button theme="orange" onClick={() => selectDifficulty(true)}>NEW GAME (VS CPU)</Button>
             <Button theme="blue" onClick={() => startEasyGame()}>NEW GAME (VS PLAYER)</Button>

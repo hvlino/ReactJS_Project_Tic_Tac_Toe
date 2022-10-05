@@ -6,10 +6,9 @@
 - [X] Change svg icon for more customizable one  
 - [X] Add counters
 - [X] Add a mute button
+- [X] Add a difficult selector
+- [x] Add an easy and hard mode
 - [ ] Make X go first always
-- [ ] Add a difficult selector
-- [ ] Add an easy and hard mode
-- [ ] Solve mute button CSS location
 - [ ] Add X or O "shadow" before clicking
 - [ ] Better responsiveness for browser size
 - [ ] Make each grid area stay pressed when you hold click on them

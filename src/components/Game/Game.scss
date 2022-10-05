@@ -48,7 +48,6 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0px 5px 1px 0px #0f202a;
-            border: 1px solid pink;
             left: 0;
         }
 
@@ -62,7 +61,6 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0px 5px 1px 0px #0f202a;
-            border: 1px solid pink;
         }
         
         .cpu-count {
@@ -75,7 +73,6 @@
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0px 5px 1px 0px #0f202a;
-            border: 1px solid pink;
             top: 60%;
             right: 0;
             transform: translate(0, 0);
@@ -90,7 +87,7 @@
         gap: 15px;
         grid-template-columns: repeat(3, 1fr);
 
-        .cell {
+        .cell-x, .cell-o {
             height: 90px;
             background: transparent;
             color: white;
@@ -109,30 +106,25 @@
                 transform: translateY(4px);
                 background-color: darken(#2a424e, 3%);
                 border: 1px solid darken(#2a424e, 4%);;
-
-                &:hover {
-                    background:none;
-                }
+                pointer-events: none;
             } 
-            // &:hover {
-            //     background: url(../../../public/x-solid.svg) no-repeat center #31c4be;
-            //     background-size: contain;
-            //     color: #31c4be;
-            // }
         }
-
-        .x {
-            color: #31c4be;
-            transform: scale(1.3);
-            stroke: #31c4be; /* Background color against your svg */
-            stroke-width: 40px; /*Between 1px and 2px*/
-        }
-        .o {
-            color: #fca607; 
-            transform: scale(1.3);
-            stroke: #fca607; /* Background color against your svg */
-            stroke-width: 40px; /*Between 1px and 2px*/
-             }
+        // .cell-x {
+        //     &:hover {
+        //         background: url(../../assets/x-solid.svg) no-repeat center;
+        //         transition: none;
+        //         opacity: 0.1;
+        //         transform: scale(0.8);
+        //     }
+        // }
+        // .cell-o {
+        //     &:hover {
+        //         background: url(../../assets/o-solid.svg) no-repeat center;
+        //         transition: none;
+        //         opacity: 0.5;
+        //         transform: scale(0.8);
+        //     }
+        // }
     }
 
         
